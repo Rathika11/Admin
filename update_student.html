@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Student</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            width: 80%;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Update Student Details</h1>
+        <form id="updateForm">
+            <input type="text" id="studentId" placeholder="Enter Student ID" required />
+            <input type="text" id="studentName" placeholder="Enter New Student Name" required />
+            <input type="email" id="studentEmail" placeholder="Enter New Student Email" required />
+            <button type="button" onclick="updateStudent()">Update Student</button>
+            <button type="button" class="back-btn" onclick="window.location.href='manage_students.html'">Back</button>
+        </form>
+        <p id="statusMessage"></p>
+    </div>
+
+    <script>
+        function updateStudent() {
+            // Collect values from the input fields
+            const studentId = document.getElementById("studentId").value;
+            const studentName = document.getElementById("studentName").value;
+            const studentEmail = document.getElementById("studentEmail").value;
+
+            // Simulate updating process (for now just log it to the console)
+            if (studentId && studentName && studentEmail) {
+                document.getElementById("statusMessage").innerText =
+                    `Student ID: ${studentId} updated to Name: ${studentName} and Email: ${studentEmail}`;
+                console.log(`Updated: ID=${studentId}, Name=${studentName}, Email=${studentEmail}`);
+            } else {
+                document.getElementById("statusMessage").innerText = "All fields are required!";
+            }
+        }
+    </script>
+</body>
+</html>
